@@ -108,7 +108,6 @@
 //     console.log("Bonsoir !");
 // }
 
-//----------------- Fonctions -------------------
 
 //TODO Créez deux variables initialisées à 3 et 4.
 //TODO Créez une fonction qui retourne l'addition de ces deux valeurs.
@@ -142,9 +141,14 @@
 
 // const tab = [-2, 3, 4];
 // const soustrait = (tableau) => {
-//     return tab.reduce((accumulateur, valeurActuelle) => accumulateur - valeurActuelle);
+//     let sum = 0;  
+//     tableau.forEach(nombre => {
+//         sum -= nombre;
+//     });  
+//     return sum;
 // };
-// console.log(soustrait());
+// console.log(soustrait(tab));
+
 
 //TODO Créez une fonction qui renvoie la somme de chaque éléments du
 //TODO tableau si celui-ci est supérieur à 0.
@@ -154,18 +158,16 @@
 // const array2 = [-2, 4, -5, 3, 6];
 
 // const addPositiveNumber = (tableau) => {
-//     const accu = (acc, va) => acc + va;    
-//     const array3 = [];
-//     array2.forEach(nombre => {
-//         // console.log(nombre);
+//     let sum = 0;  
+//     tableau.forEach(nombre => {
 //         if(nombre > 0){
 //             // console.log(nombre);
-//             array3.push(nombre);
+//             sum += nombre;
 //         }else{}
-//     });
-//     return array3.reduce(accu);
+//     });  
+//     return sum;
 // };
-// console.log(addPositiveNumber());
+// console.log(addPositiveNumber(array2));
 
 //TODO Créez une fonction qui prend un parametre 'r' et qui
 //TODO renvoie le périmetre d'un cercle.
@@ -222,14 +224,12 @@
 
 // const nombres = ["3", "5", "6", "2"];
 
-// const sumNbres = () => {
-//     const accu = (a, b) => a + b;
-//     const newNbres = [];
-//     nombres.forEach(nbre => {
-//         newNbres.push(parseInt(nbre, 10));
+// const sumNbres = (tableau) => {
+//     let sum = 0;
+//     tableau.forEach(nombre => {
+//         sum += parseInt(nombre, 10);
+//         console.log(nombre);
 //     });
-//     console.log(newNbres);
-//     const somme = newNbres.reduce(accu);
-//     return somme;
+//     return sum;
 // };
-// console.log(sumNbres());
+// console.log(sumNbres(nombres));
