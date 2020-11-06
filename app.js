@@ -91,6 +91,24 @@
 //     console.log("Tu as le bon âge pour voter !");
 // }
 
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="text" id="age" name="age" value=""><input type="button" id="bouton" value="Vérifier" onclick="voteOrNot()"><br /><p></p>'); // on peut "verrouiller" avec un input type="number"... Mais je voulais faire une condition "else if" pour tester...
+// document.close();
+// const voteOrNot = () => {
+//     const saisie = document.querySelector("#age").value;
+//     if(saisie < 18){
+//         document.querySelector("p").innerHTML = `Tu as ${saisie} ans, tu ne peux pas voter jeune padawan !`;
+//     }else if(isNaN(saisie)){
+//         document.querySelector("p").innerHTML = `Tu as écrit : "${saisie}", je crois que ce n'est pas un chiffre...`;
+//     }
+//     else{
+//         document.querySelector("p").innerHTML = `Félicitations ! Du haut de tes ${saisie} ans tu peux voter !`;
+//     }
+    
+// };
+
 //TODO  Afficher la date d'aujourd'hui avec javascript.
 //TODO  En utilisant les conditions 'if' et 'else' affichez :
 //TODO  "bonjour" si il est entre 5h du matin et 17h
@@ -108,14 +126,46 @@
 //     console.log("Bonsoir !");
 // }
 
+//* version HTML ->
+
+// const dateJour = new Date();
+// const heure = dateJour.getHours();
+// const minutes = dateJour.getMinutes();
+// console.log(heure);
+// document.open();
+// document.write('<p></p>');
+// document.close();
+// if(heure > 5 && heure < 17){
+//     document.querySelector("p").innerHTML = `Bonjour, il est déjà ${heure}h${minutes} !`;
+// }else if(heure > 17 && heure < 21){
+//     document.querySelector("p").innerHTML = `Bonsoir il est ${heure}h${minutes} !`;
+// }
+// else{
+//     document.querySelector("p").innerHTML = `Hey, il est ${heure}h${minutes}... Il serait pas un peu temps d'aller se coucher ?!`;
+// }
+
 
 //TODO Créez deux variables initialisées à 3 et 4.
 //TODO Créez une fonction qui retourne l'addition de ces deux valeurs.
 
 // const add = (num1, num2) => {
-//     return num1 + num2
+//     return num1 + num2;
 // };
 // console.log(add(3, 4));
+
+//* version HTML ->
+
+// document.open();
+// document.write('<input type="number" id="num1" name="num1" value="3"><span> + </span><input type="number" id="num2" name="num2" value="4"><input type="button" id="bouton" value="Calculer" onclick="add()"><br /><p></p>');
+// document.close();
+
+// const add = (
+//     num1 = parseInt(document.querySelector("#num1").value, 10),
+//     num2 = parseInt(document.querySelector("#num2").value, 10)) => {
+//         document.querySelector("p").innerHTML =  `L'addition de ${num1} + ${num2} = ${num1 + num2}`;
+// };
+
+
 
 //TODO Créez une fonction qui prend en paramètre la valeur i. La fonction doit
 //TODO retourner la valeur i au carré et l'afficher.
@@ -124,6 +174,17 @@
 //     return number*number;
 // };
 // console.log(square(5));
+
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="number" id="nombre" name="nombre" value="0"><input type="button" id="bouton" value="Calculer" onclick="square()"><br /><p></p>');
+// document.close();
+
+// const square = (saisie = parseInt(document.querySelector("#nombre").value, 10)) => {
+//     const carre = saisie*saisie;
+//     document.querySelector("p").innerHTML = `Le carré de ${saisie} est : ${carre} (soit ${saisie} x ${saisie})`;
+// };
 
 
 //TODO  En utilisant la methode 'map', mettre la chaine de
@@ -177,6 +238,17 @@
 // };
 // console.log(perimetreCercle(25));
 
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="number" id="cercle" name="cercle" value="0"><input type="button" id="bouton" value="Calculer" onclick="perimetreCercle()"><br /><p></p>');
+// document.close();
+
+// const perimetreCercle = (r = parseInt(document.querySelector("#cercle").value, 10)) => {
+//     const perimetre = 2 * Math.round(Math.PI * 100)/100 * r;
+//     document.querySelector("p").innerHTML = `Le périmètre d'un cercle de ${r} de rayon = ${perimetre} (soit la formule suivante : 2 x &pi; (${Math.round(Math.PI * 100)/100}) x rayon (${r}))`;
+// };
+
 //TODO Créez une fonction qui met la premiere lettre d'un mot en majuscule.
 //TODO Le reste du mot doit être en minuscule.
 //TODO Le mot est "SimPloN"
@@ -207,6 +279,20 @@
 // };
 // console.log(pairImpair(12));
 
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="number" id="nombre" name="nombre" value="0"><input type="button" id="bouton" value="Vérifier" onclick="pairImpair()"><br /><p></p>');
+// document.close();
+
+// const pairImpair = (nbre = parseInt(document.querySelector("#nombre").value, 10)) => {
+//     if(nbre%2 == 0){
+//         document.querySelector("p").innerHTML = `${nbre} est un nombre pair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne = ${nbre%2})`;
+//     }else{
+//         document.querySelector("p").innerHTML = `${nbre}  est un nombre impair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne n'est pas égal à zéro (ici, il reste ${nbre%2}))`;
+//     }
+// };
+
 //TODO Mot inversé
 //TODO créez une fonction qui prend en paramètre une chaine de caractère.
 //TODO Cette fonction renvoie la chaine de caractère inversée.
@@ -219,6 +305,18 @@
 //     return inverseTab.join("");
 // };
 // console.log(reverseWord("Thierry"));
+
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="text" id="mot" name="mot" value=""><input type="button" id="bouton" value="Inverser" onclick="reverseWord()"><br /><p></p>');
+// document.close();
+
+// const reverseWord = (word = document.querySelector("#mot").value) => {
+//     const sepLettresTab = word.split("");
+//     const inverseTab = sepLettresTab.reverse();
+//     document.querySelector("p").innerHTML = `En mode inversé ça donne : "${inverseTab.join("")}"`;
+// };
 
 //TODO créez une fonction qui renvoie la somme de tableau
 
