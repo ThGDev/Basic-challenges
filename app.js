@@ -113,14 +113,123 @@
 //TODO Créez deux variables initialisées à 3 et 4.
 //TODO Créez une fonction qui retourne l'addition de ces deux valeurs.
 
-const add = (num1, num2) => {
-    return num1 + num2
-};
-console.log(add(3, 4));
+// const add = (num1, num2) => {
+//     return num1 + num2
+// };
+// console.log(add(3, 4));
 
 //TODO Créez une fonction qui prend en paramètre la valeur i. La fonction doit
 //TODO retourner la valeur i au carré et l'afficher.
 
-const square = (number) => number*number;
-console.log(square(5));
-  
+// const square = (number) => {
+//     return number*number;
+// };
+// console.log(square(5));
+
+
+//TODO  En utilisant la methode 'map', mettre la chaine de
+//TODO  caractère en majuscule.
+
+// const beatles = ["paul", "john", "ringo", "george"];
+// const beatlesMaj = beatles.map(maj => {
+//     return maj.toUpperCase();
+// });
+// console.log(beatlesMaj);
+
+//TODO Créez un tableau nommé tab dont le premier
+//TODO élément est -2, le deuxième 3 et le troisième 4
+//TODO Créez une fonction qui soustrait chaque éléments du tableau au suivant.
+
+// const tab = [-2, 3, 4];
+// const soustrait = (tableau) => {
+//     return tab.reduce((accumulateur, valeurActuelle) => accumulateur - valeurActuelle);
+// };
+// console.log(soustrait());
+
+//TODO Créez une fonction qui renvoie la somme de chaque éléments du
+//TODO tableau si celui-ci est supérieur à 0.
+
+// ELLE M'A DONNE BEAUCOUP DE MAL CELLE LA !!!!
+
+// const array2 = [-2, 4, -5, 3, 6];
+
+// const addPositiveNumber = (tableau) => {
+//     const accu = (acc, va) => acc + va;    
+//     const array3 = [];
+//     array2.forEach(nombre => {
+//         // console.log(nombre);
+//         if(nombre > 0){
+//             // console.log(nombre);
+//             array3.push(nombre);
+//         }else{}
+//     });
+//     return array3.reduce(accu);
+// };
+// console.log(addPositiveNumber());
+
+//TODO Créez une fonction qui prend un parametre 'r' et qui
+//TODO renvoie le périmetre d'un cercle.
+
+// const perimetreCercle = (r) => {
+//     return 2 * Math.PI * r;
+// };
+// console.log(perimetreCercle(25));
+
+//TODO Créez une fonction qui met la premiere lettre d'un mot en majuscule.
+//TODO Le reste du mot doit être en minuscule.
+//TODO Le mot est "SimPloN"
+
+// const capitalize = (word) => {
+//     const majToLow = word.toLowerCase();
+//     const firstLetterMaj = majToLow[0].toUpperCase() + majToLow.substr(1);
+//     return firstLetterMaj;
+//   };
+// console.log(capitalize("SimPloN"));
+
+//TODO Odd or Even
+//TODO Créez un fonction qui prend un nombre en parametre et qui renvoie :
+//TODO paire si le nombre est pair
+//TODO impaire si le nombre est impair
+//TODO Tips : jetez un coup d'oeil à l'opérateur '%' dans la doc.
+
+// Vu la soluce ici : https://waytolearnx.com/2019/09/nombre-pair-ou-impair-en-javascript.html
+// Mais j'ai pigé l'astuce : un nombre pair est TOUJOURS divisible par 2
+// donc pour vérifier on regarde si le reste de la division par 2 (modulo -> %) = zéro (nombre pair), sinon c'est un nombre impair (reste de la division n'est PAS égal à zéro) ;-)
+
+// const pairImpair = (nbre) => {
+//     if(nbre%2 == 0){
+//         return "C'est un nombre pair !"
+//     }else{
+//         return "C'est un nombre impair !"
+//     }
+// };
+// console.log(pairImpair(12));
+
+//TODO Mot inversé
+//TODO créez une fonction qui prend en paramètre une chaine de caractère.
+//TODO Cette fonction renvoie la chaine de caractère inversée.
+//TODO ex: reverseWord('simplon') ==> 'nolpmis'
+//TODO Aide : join(), split(), reverse()
+
+// const reverseWord = (word) => {
+//     const sepLettresTab = word.split("");
+//     const inverseTab = sepLettresTab.reverse();
+//     return inverseTab.join("");
+// };
+// console.log(reverseWord("Thierry"));
+
+//TODO créez une fonction qui renvoie la somme de tableau
+
+// const nombres = ["3", "5", "6", "2"];
+
+// const sumNbres = () => {
+//     const accu = (a, b) => a + b;
+//     const newNbres = [];
+//     nombres.forEach(nbre => {
+//         newNbres.push(parseInt(nbre, 10));
+//     });
+//     console.log(newNbres);
+//     const somme = newNbres.reduce(accu);
+//     return somme;
+// };
+// console.log(sumNbres());
