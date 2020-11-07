@@ -79,6 +79,36 @@
 // sommeTotale /= nbreElementsTableau;
 // console.log(sommeTotale);
 
+//* --> version HTML :
+
+// const promo = [12, 13, 17, 3, 14, 18];
+// const sommeTotale = (notes) => {
+//     let sum = 0;  
+//     notes.forEach(nombre => {
+//         sum += nombre;
+//     });  
+//     return sum;
+// };
+// sommeTotale(promo);
+// const nbreElementsTableau = promo.length;
+// const moyenne = sommeTotale(promo)/nbreElementsTableau;
+
+// document.open();
+// document.write('<p></p>');
+// document.close();
+
+// document.querySelector("p").innerHTML = `Dans cette promo, les notes obtenues ont été les suivantes : ${promo}. Pour obtenir la moyenne de ces notes, on doit les additionner (Résultat = ${sommeTotale(promo)}) puis les compter (il y en a ${nbreElementsTableau}) et enfin, diviser la somme de toutes les notes par le nombre de notes, soit : ${sommeTotale(promo)} &divide; ${nbreElementsTableau} = ${Math.round(moyenne * 100)/100}`;
+
+// const tab = [-2, 3, 4];
+// const soustrait = (tableau) => {
+//     let sum = 0;  
+//     tableau.forEach(nombre => {
+//         sum -= nombre;
+//     });  
+//     return sum;
+// };
+// console.log(soustrait(tab));
+
 //TODO Déclarez une variable "age" avec la valeur de votre choix.
 //TODO En utilisant les conditions 'if' et 'else' affichez :
 //TODO peut voter si 'age' est supérieur ou égal à 18
@@ -196,6 +226,20 @@
 // });
 // console.log(beatlesMaj);
 
+//* --> version HTML :
+
+// const beatles = ["paul", "john", "ringo", "george"];
+
+// document.open();
+// document.write('<p></p>');
+// document.close();
+
+// const beatlesMaj = beatles.map(maj => {
+//     return maj.toUpperCase();
+// });
+
+// document.querySelector("p").innerHTML = `Pour le tableau → "beatles = ["paul", "john", "ringo", "george"]", lorsque l'on passe tous les prénoms en majuscules, ça donne ça : ${beatlesMaj}`;
+
 //TODO Créez un tableau nommé tab dont le premier
 //TODO élément est -2, le deuxième 3 et le troisième 4
 //TODO Créez une fonction qui soustrait chaque éléments du tableau au suivant.
@@ -209,6 +253,23 @@
 //     return sum;
 // };
 // console.log(soustrait(tab));
+
+//* --> version HTML :
+
+// const tab = [-2, 3, 4];
+
+// document.open();
+// document.write('<p></p>');
+// document.close();
+
+// const soustrait = (tableau) => {
+//     let sum = 0;  
+//     tableau.forEach(nombre => {
+//         sum -= nombre;
+//     });
+//     document.querySelector("p").innerHTML = `Pour le tableau → "tab = [-2, 3, 4]", on soustrait les chiffres ${tableau} les uns aux autres et le résultat = ${sum}`;
+// };
+// soustrait(tab);
 
 
 //TODO Créez une fonction qui renvoie la somme de chaque éléments du
@@ -229,6 +290,28 @@
 //     return sum;
 // };
 // console.log(addPositiveNumber(array2));
+
+//* --> version HTML :
+
+// const array2 = [-2, 4, -5, 3, 6];
+// const listeNombres = [];
+
+// document.open();
+// document.write('<p></p>');
+// document.close();
+
+// const addPositiveNumber = (tableau) => {
+//     let sum = 0;  
+//     tableau.forEach(nombre => {
+//         if(nombre > 0){
+//             sum += nombre;
+//             listeNombres.push(nombre);
+//         }else{}
+//     });  
+//     document.querySelector("p").innerHTML = `Pour le tableau → "array2 = [-2, 4, -5, 3, 6]", on ne conserve que les chiffres > 0 (soit ${listeNombres}) et on les additionnes. Le résultat = ${sum}`;
+// };
+// addPositiveNumber(array2);
+
 
 //TODO Créez une fonction qui prend un parametre 'r' et qui
 //TODO renvoie le périmetre d'un cercle.
@@ -259,6 +342,19 @@
 //     return firstLetterMaj;
 //   };
 // console.log(capitalize("SimPloN"));
+
+//* --> version HTML :
+
+// document.open();
+// document.write('<input type="text" id="mot" name="mot" value="SimPloN"><input type="button" id="bouton" value="Capitaliser" onclick="capitalize()"><br /><p></p>');
+// document.close();
+
+// const capitalize = (word = document.querySelector("#mot").value) => {
+//     const majToLow = word.toLowerCase();
+//     const firstLetterMaj = majToLow[0].toUpperCase() + majToLow.substr(1);
+//     document.querySelector("p").innerHTML = `On met les lettres en minuscules puis la 1&egravere en majuscule. Vous avez saisi : "${word}" qui devient donc "${firstLetterMaj}".`;
+// };
+// capitalize();
 
 //TODO Odd or Even
 //TODO Créez un fonction qui prend un nombre en parametre et qui renvoie :
@@ -331,3 +427,20 @@
 //     return sum;
 // };
 // console.log(sumNbres(nombres));
+
+//* --> version HTML :
+
+// const nombres = ["3", "5", "6", "2"];
+
+// document.open();
+// document.write('<p></p>');
+// document.close();
+
+// const sumNbres = (tableau) => {
+//     let sum = 0;
+//     tableau.forEach(nombre => {
+//         sum += parseInt(nombre, 10);
+//     });
+//     document.querySelector("p").innerHTML = `Pour le tableau → "nombres = ["3", "5", "6", "2"]", la somme des chiffres  ${nombres} = ${sum}`;
+// };
+// sumNbres(nombres);
