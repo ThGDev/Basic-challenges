@@ -49,6 +49,39 @@
 // villes.splice(2, 1);
 // console.log(villes);
 
+//* --> version HTML :
+
+// const villes = ["Paris", "Marseille", "Arles", "Bordeaux", "Orléans"];
+
+// document.querySelector("#contenu").innerHTML = `<h2>Afficher un &eacute;l&eacute;ments de tableau selon son indice, ajouter &amp; supprimer un &eacute;l&eacute;ment</h2><p>On considère le tableau suivants : ${villes}.</p><p>Clique sur le bouton correspondant pour afficher ce qui correspond :</p><p id="result"></p>`;
+
+// for(let i = 0; i < villes.length; i++){
+//     document.write(`<button onclick="indice(${i})">Indice ${i}</button> `);
+// };
+
+// //TODO Afficher la ville à l'indice 3
+// const indice = (nbr) => {
+//     if(villes[nbr] === undefined){
+//         document.querySelector("#result").innerHTML = `Il n'y a plus de ville à l'indice ${nbr}`;
+//     }else{
+//     document.querySelector("#result").innerHTML = `L'&eacute;l&eacute;ment &agrave; l'indice ${nbr} est : ${villes[nbr]}`;
+//     };
+// };
+// //TODO Ajouter une ville au tableau
+// document.write(`<h3>Ajoute une ville au tableau</h3><p>Saisi ici un nom de ville :</p><input type="text" id="ville" name="ville" value=""><button onclick="add()"><i class="fas fa-plus"></i></button>`);
+// const add = (nomVille = document.querySelector("#ville").value) => {
+//     villes.push(nomVille);
+//     document.querySelector("#result").innerHTML = `Le tableau contient maintenant une nouvelle ville (${nomVille}) et ressemble donc maintenant à ça : ${villes}`;
+// };
+// //TODO Supprimer la ville à l'indice 2
+
+// document.write(`<h3>Enlève une ville au tableau</h3><p>Saisi ici son indice :</p><input type="number" id="indice" name="indice" value=""><button onclick="enleve()"><i class="fas fa-minus"></i></button>`);
+// const enleve = (indiceVille = document.querySelector("#indice").value) => {
+//     villes.splice(indiceVille, 1);
+//     document.querySelector("#result").innerHTML = `Le tableau contient maintenant une ville en moins et ressemble donc maintenant à ça : ${villes}`;
+// };
+
+
 // Comme tu le sais sans doute, pour parcourir un tableau,
 // il faut boucler sur ce tableau.
 //TODO Parcours le tableau suivant afin de monter chaque
@@ -61,6 +94,21 @@
 //         Math.pow(nbre, 2)
 //         );
 // });
+
+//* --> version HTML :
+
+// const array1 = [2, 4, 8];
+
+// const carre = () => {
+//     const array2 = [];
+//     array1.forEach((nbre) => {
+//         array2.push(Math.pow(nbre, 2));
+//     });
+//     document.querySelector("#result").innerHTML = `${array1} deviennent => ${array2}`;
+// };
+// document.querySelector("#contenu").innerHTML = `<h2>Calcul du carr&eacute; d'&eacute;l&eacute;ments de tableau</h2><p>On considère les chiffres suivants : ${array1}. Clique sur le bouton pour les mettre au carré</p><input type="button" id="bouton" value="Mettre au carré" onclick="carre()"><button id="#refresh" onclick="location.reload()"><i class="fas fa-sync-alt"></i></button><p id="result"></p>`;
+
+
 
 //TODO Le tableau suivant indique les notes d'une promo lointaine !
 //TODO Calculer la moyenne de cette promo et afficher le resultat
@@ -93,21 +141,10 @@
 // const nbreElementsTableau = promo.length;
 // const moyenne = sommeTotale(promo)/nbreElementsTableau;
 
-// document.open();
-// document.write('<p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = `<h2>Calcul de moyenne</h2><p>Dans cette promo, les notes obtenues ont été les suivantes : ${promo}.</p><p>Pour obtenir la moyenne de ces notes, on doit les additionner (Résultat = ${sommeTotale(promo)}) puis les compter (il y en a ${nbreElementsTableau}) et enfin, diviser la somme de toutes les notes par le nombre de notes</p><p id="result"></p>`;
 
-// document.querySelector("p").innerHTML = `Dans cette promo, les notes obtenues ont été les suivantes : ${promo}. Pour obtenir la moyenne de ces notes, on doit les additionner (Résultat = ${sommeTotale(promo)}) puis les compter (il y en a ${nbreElementsTableau}) et enfin, diviser la somme de toutes les notes par le nombre de notes, soit : ${sommeTotale(promo)} &divide; ${nbreElementsTableau} = ${Math.round(moyenne * 100)/100}`;
+// document.querySelector("#result").innerHTML = `→ Soit : ${sommeTotale(promo)} &divide; ${nbreElementsTableau} = ${Math.round(moyenne * 100)/100}`;
 
-// const tab = [-2, 3, 4];
-// const soustrait = (tableau) => {
-//     let sum = 0;  
-//     tableau.forEach(nombre => {
-//         sum -= nombre;
-//     });  
-//     return sum;
-// };
-// console.log(soustrait(tab));
 
 //TODO Déclarez une variable "age" avec la valeur de votre choix.
 //TODO En utilisant les conditions 'if' et 'else' affichez :
@@ -123,18 +160,17 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="text" id="age" name="age" value=""><input type="button" id="bouton" value="Vérifier" onclick="voteOrNot()"><br /><p></p>'); // on peut "verrouiller" avec un input type="number"... Mais je voulais faire une condition "else if" pour tester...
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Est-ce que tu peux voter ?</h2><p>Saisi ton âge pour voir</p><input type="text" id="age" name="age" value=""><input type="button" id="bouton" value="Vérifier" onclick="voteOrNot()"><br /><p id="result"></p>'; // on peut "verrouiller" avec un input type="number"... Mais je voulais faire une condition "else if" pour tester...
+
 // const voteOrNot = () => {
 //     const saisie = document.querySelector("#age").value;
 //     if(saisie < 18){
-//         document.querySelector("p").innerHTML = `Tu as ${saisie} ans, tu ne peux pas voter jeune padawan !`;
+//         document.querySelector("#result").innerHTML = `Tu as ${saisie} ans, tu ne peux pas voter jeune padawan !`;
 //     }else if(isNaN(saisie)){
-//         document.querySelector("p").innerHTML = `Tu as écrit : "${saisie}", je crois que ce n'est pas un chiffre...`;
+//         document.querySelector("#result").innerHTML = `Tu as écrit : "${saisie}", je crois que ce n'est pas un chiffre...`;
 //     }
 //     else{
-//         document.querySelector("p").innerHTML = `Félicitations ! Du haut de tes ${saisie} ans tu peux voter !`;
+//         document.querySelector("#result").innerHTML = `Félicitations ! Du haut de tes ${saisie} ans tu peux voter !`;
 //     }
     
 // };
@@ -160,14 +196,19 @@
 
 // const dateJour = new Date();
 // const heure = dateJour.getHours();
-// const minutes = dateJour.getMinutes();
-// console.log(heure);
-// document.open();
-// document.write('<p></p>');
-// document.close();
-// if(heure > 5 && heure < 17){
+// // si la valeur de getMinutes() est inférieure à 10, alors ajoute moi un "0" devant, sinon, ne met rien.
+// // condition "if" en ligne
+// // trouvé là : https://stackoverflow.com/questions/8935414/getminutes-0-9-how-to-display-two-digit-numbers
+// const minutes = (dateJour.getMinutes()<10?'0':'') + dateJour.getMinutes();
+
+// document.querySelector("#contenu").innerHTML = '<h2>Message personnalis&eacute; selon l\'heure</h2><p></p><p id="result"></p>';
+
+// if(heure >= 5 && heure < 17){
 //     document.querySelector("p").innerHTML = `Bonjour, il est déjà ${heure}h${minutes} !`;
-// }else if(heure > 17 && heure < 21){
+//     if(heure >= 12 && heure <= 14){
+//         document.querySelector("#result").innerHTML = ` Il faut songer à manger !`;
+//     }
+// }else if(heure >= 17 && heure <= 21){
 //     document.querySelector("p").innerHTML = `Bonsoir il est ${heure}h${minutes} !`;
 // }
 // else{
@@ -185,14 +226,12 @@
 
 //* version HTML ->
 
-// document.open();
-// document.write('<input type="number" id="num1" name="num1" value="3"><span> + </span><input type="number" id="num2" name="num2" value="4"><input type="button" id="bouton" value="Calculer" onclick="add()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Additionne 2 nombres</h2><p>Saisi 2 nombres pour les additionner</p><input type="number" id="num1" name="num1" value="3"><span> + </span><input type="number" id="num2" name="num2" value="4"><button id="bouton" onclick="add()"><i class="fas fa-calculator"></i></button><br /><p id="result"></p>';
 
 // const add = (
 //     num1 = parseInt(document.querySelector("#num1").value, 10),
 //     num2 = parseInt(document.querySelector("#num2").value, 10)) => {
-//         document.querySelector("p").innerHTML =  `L'addition de ${num1} + ${num2} = ${num1 + num2}`;
+//         document.querySelector("#result").innerHTML =  `L'addition de ${num1} + ${num2} = ${num1 + num2}`;
 // };
 
 
@@ -207,13 +246,11 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="number" id="nombre" name="nombre" value="0"><input type="button" id="bouton" value="Calculer" onclick="square()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Calcule le carré d\'un nombre</h2><p>Saisi un nombre pour calculer son carré</p><input type="number" id="nombre" name="nombre" value="0"><button id="bouton" onclick="square()"><i class="fas fa-calculator"></i></button><br /><p id="result"></p>';
 
 // const square = (saisie = parseInt(document.querySelector("#nombre").value, 10)) => {
 //     const carre = saisie*saisie;
-//     document.querySelector("p").innerHTML = `Le carré de ${saisie} est : ${carre} (soit ${saisie} x ${saisie})`;
+//     document.querySelector("#result").innerHTML = `Le carré de ${saisie} est : ${carre} (soit ${saisie} x ${saisie})`;
 // };
 
 
@@ -230,15 +267,11 @@
 
 // const beatles = ["paul", "john", "ringo", "george"];
 
-// document.open();
-// document.write('<p></p>');
-// document.close();
-
 // const beatlesMaj = beatles.map(maj => {
 //     return maj.toUpperCase();
 // });
 
-// document.querySelector("p").innerHTML = `Pour le tableau → "beatles = ["paul", "john", "ringo", "george"]", lorsque l'on passe tous les prénoms en majuscules, ça donne ça : ${beatlesMaj}`;
+// document.querySelector("#contenu").innerHTML = `<h2>Passage en majuscules d'&eacute;l&eacute;ments de tableau</h2><p>Voici les prénoms ${beatles}.</p><p>Lorsqu'on les passe en majuscules, ça donne ça : ${beatlesMaj}</p>`;
 
 //TODO Créez un tableau nommé tab dont le premier
 //TODO élément est -2, le deuxième 3 et le troisième 4
@@ -258,16 +291,12 @@
 
 // const tab = [-2, 3, 4];
 
-// document.open();
-// document.write('<p></p>');
-// document.close();
-
 // const soustrait = (tableau) => {
 //     let sum = 0;  
 //     tableau.forEach(nombre => {
 //         sum -= nombre;
 //     });
-//     document.querySelector("p").innerHTML = `Pour le tableau → "tab = [-2, 3, 4]", on soustrait les chiffres ${tableau} les uns aux autres et le résultat = ${sum}`;
+//     document.querySelector("#contenu").innerHTML = `<h2>Soustraction d'&eacute;l&eacute;ments de tableau</h2><p>Nous avons ces chiffres : ${tab}.</p><p>On les soustrait les uns aux autres, dans l'ordre et le résultat = ${sum}</p>`;
 // };
 // soustrait(tab);
 
@@ -296,10 +325,6 @@
 // const array2 = [-2, 4, -5, 3, 6];
 // const listeNombres = [];
 
-// document.open();
-// document.write('<p></p>');
-// document.close();
-
 // const addPositiveNumber = (tableau) => {
 //     let sum = 0;  
 //     tableau.forEach(nombre => {
@@ -308,7 +333,7 @@
 //             listeNombres.push(nombre);
 //         }else{}
 //     });  
-//     document.querySelector("p").innerHTML = `Pour le tableau → "array2 = [-2, 4, -5, 3, 6]", on ne conserve que les chiffres > 0 (soit ${listeNombres}) et on les additionnes. Le résultat = ${sum}`;
+//     document.querySelector("#contenu").innerHTML = `<h2>Tri &amp; addition</h2><p>Nous avons ces chiffres : ${array2}</p><p>On souhaite ne conserver que les chiffres > 0, soit ${listeNombres}, puis les additionner.</p><p>Le résultat = ${sum}</p>`;
 // };
 // addPositiveNumber(array2);
 
@@ -323,13 +348,11 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="number" id="cercle" name="cercle" value="0"><input type="button" id="bouton" value="Calculer" onclick="perimetreCercle()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Calcul du périmètre d\'un cercle</h2><img src="https://universites-numeriques.fr/wp-content/uploads/2020/04/image-e1587374234318.png" width="100px" /><p>Saisi un chiffre représentant le rayon d\'un cercle (peu importe l\'unité)</p><input type="number" id="cercle" name="cercle" value="0"><button id="bouton" onclick="perimetreCercle()"><i class="fas fa-calculator"></i></button><br /><p id="result"></p>';
 
 // const perimetreCercle = (r = parseInt(document.querySelector("#cercle").value, 10)) => {
 //     const perimetre = 2 * Math.round(Math.PI * 100)/100 * r;
-//     document.querySelector("p").innerHTML = `Le périmètre d'un cercle de ${r} de rayon = ${perimetre} (soit la formule suivante : 2 x &pi; (${Math.round(Math.PI * 100)/100}) x rayon (${r}))`;
+//     document.querySelector("#result").innerHTML = `Le périmètre d'un cercle de ${r} de rayon = ${perimetre} soit la formule suivante : 2 x &pi; x r (où &pi; = ${Math.round(Math.PI * 100)/100} et r = ${r})`;
 // };
 
 //TODO Créez une fonction qui met la premiere lettre d'un mot en majuscule.
@@ -345,16 +368,13 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="text" id="mot" name="mot" value="SimPloN"><input type="button" id="bouton" value="Capitaliser" onclick="capitalize()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Passe un (ou des) mot(s) en minuscules et met la 1&egrave;re lettre en majuscule</h2><p>Saisi un (ou des) mot(s) en utilisant des majuscules et des minuscules :</p><input type="text" id="mot" name="mot" value="SimPloN"><button id="bouton" onclick="capitalize()"><i class="fas fa-text-height"></i></button><br /><p id="result"></p>';
 
 // const capitalize = (word = document.querySelector("#mot").value) => {
 //     const majToLow = word.toLowerCase();
 //     const firstLetterMaj = majToLow[0].toUpperCase() + majToLow.substr(1);
-//     document.querySelector("p").innerHTML = `On met les lettres en minuscules puis la 1&egravere en majuscule. Vous avez saisi : "${word}" qui devient donc "${firstLetterMaj}".`;
+//     document.querySelector("#result").innerHTML = `Vous avez saisi : "${word}" qui devient donc "${firstLetterMaj}".`;
 // };
-// capitalize();
 
 //TODO Odd or Even
 //TODO Créez un fonction qui prend un nombre en parametre et qui renvoie :
@@ -377,15 +397,13 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="number" id="nombre" name="nombre" value="0"><input type="button" id="bouton" value="Vérifier" onclick="pairImpair()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>Nombre pair ou impair ?</h2><p>Saisi un nombre et je vais te dire s\'il est pair ou impair :</p><input type="number" id="nombre" name="nombre" value="0"><button id="bouton" onclick="pairImpair()"><i class="far fa-hand-peace"></i></button><br /><p id="result"></p>';
 
 // const pairImpair = (nbre = parseInt(document.querySelector("#nombre").value, 10)) => {
 //     if(nbre%2 == 0){
-//         document.querySelector("p").innerHTML = `${nbre} est un nombre pair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne = ${nbre%2})`;
+//         document.querySelector("#result").innerHTML = `${nbre} est un nombre pair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne = ${nbre%2})`;
 //     }else{
-//         document.querySelector("p").innerHTML = `${nbre}  est un nombre impair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne n'est pas égal à zéro (ici, il reste ${nbre%2}))`;
+//         document.querySelector("#result").innerHTML = `${nbre}  est un nombre impair ! (car si l'on divise ${nbre} par 2, le reste de la division euclidienne n'est pas égal à zéro → ici, il reste ${nbre%2})`;
 //     }
 // };
 
@@ -404,14 +422,19 @@
 
 //* --> version HTML :
 
-// document.open();
-// document.write('<input type="text" id="mot" name="mot" value=""><input type="button" id="bouton" value="Inverser" onclick="reverseWord()"><br /><p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = '<h2>&Eacute;crit à l\'envert</h2><p>Saisi un ou des mot(s) puis clique sur le bouton pour renverser l\'ordre des lettres :</p><input type="text" id="mot" name="mot" value=""><button id="bouton" onclick="reverseWord()"><i class="fas fa-undo"></i></button><br /><p id="result"></p>';
 
 // const reverseWord = (word = document.querySelector("#mot").value) => {
-//     const sepLettresTab = word.split("");
-//     const inverseTab = sepLettresTab.reverse();
-//     document.querySelector("p").innerHTML = `En mode inversé ça donne : "${inverseTab.join("")}"`;
+
+//     // EN VERSION HTML JE RENVERSE LES MOTS AVEC LA PROPRIETE CSS scale() POUR UN MEILLEUR RENDU VISUEL
+//     // → nous sommes d'accord sur le fait que ça n'agit pas de la même manière puisque
+//     // ça ne réécris pas les mots en réorganisant les lettres, mais ne fait qu'inverser la DIV
+//     // → Je n'ai pas trouvé comment faire pour séparer les mots saisis puis séparer ces derniers en lettres
+//     // puis scale() chaque lettre puis reverse() puis join() les mots avec les lettres scale() et les afficher...
+    
+//     document.querySelector("#result").innerHTML = `Ce que vous avez saisi de manière inversée : <div id="reverse">${word}</div>`;
+//     document.querySelector("#reverse").style.transform = "scale(-1, 1)";
+//     document.querySelector("#reverse").style.display = "inline-block";
 // };
 
 //TODO créez une fonction qui renvoie la somme de tableau
@@ -432,15 +455,13 @@
 
 // const nombres = ["3", "5", "6", "2"];
 
-// document.open();
-// document.write('<p></p>');
-// document.close();
+// document.querySelector("#contenu").innerHTML = `<h2>Changement du type de donnée &amp; addition</h2><p>Nous avons ces chiffres: ${nombres} qui sont de type "${typeof nombres}".</p><p id="result"></p>`;
 
 // const sumNbres = (tableau) => {
 //     let sum = 0;
 //     tableau.forEach(nombre => {
 //         sum += parseInt(nombre, 10);
 //     });
-//     document.querySelector("p").innerHTML = `Pour le tableau → "nombres = ["3", "5", "6", "2"]", la somme des chiffres  ${nombres} = ${sum}`;
+//     document.querySelector("#result").innerHTML = `On les transforme donc en type "${typeof sum}" puis on les additionne, ce qui donne pour résultat : ${sum}`;
 // };
 // sumNbres(nombres);
